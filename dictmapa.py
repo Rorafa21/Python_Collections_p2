@@ -5,3 +5,6 @@ aparicoes = {
     "nome" : 1,
     
 }
+
+aparicoes["Carlos"] = 1
+print(aparicoes)
