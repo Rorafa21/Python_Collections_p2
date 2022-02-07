@@ -6,8 +6,6 @@ meu_texto = meu_texto.lower()
 aparicoes = defaultdict()
 
 for palavra in meu_texto.split():
-    ate_agora = aparicoes.get(palavra, 0)
-    aparicoes[palavra] = ate_agora + 1
-
+    aparicoes[palavra] += 1
 
 print(aparicoes)
