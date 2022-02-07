@@ -1,4 +1,4 @@
-
+from collections import Counter
 
 
 
@@ -29,4 +29,13 @@ R
 ARMADILHA VENENOSA
 Teemo arremessa uma armadilha venenosa explosiva usando um dos cogumelos que guardou na mochila. Se um inimigo pisar na armadilha, ela soltará uma nuvem venenosa que causa dano e reduz a velocidade de inimigos ao longo do tempo. Se Teemo arremessar um cogumelo em cima de outro, ele saltará, recebendo alcance adicional.'''
 
-for palavra in texto1.split()
+def analisa_frequencia_de_letras(texto):
+    aparicoes = Counter(texto.lower())
+    total_de_carac = sum(aparicoes.values())
+
+    proporcoes = [(letra, frequencia / total_de_carac) for letra, frequencia in aparicoes.items()]
+    proporcoes = Counter(dict(proporcoes))
+    mais_comuns = proporcoes.most_common(10)
+    for caracteres, proporcao in mais_comuns:
+        print(f"{caracteres} => {proporcao * 100 :.2f}%")
+analisa_frequencia_de_letras(texto1)
